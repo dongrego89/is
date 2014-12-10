@@ -41,7 +41,6 @@ namespace agenda{
 		std::string movil_;
 		std::string email_;
 		std::string anotaciones_;
-
 		std::list<Direccion> direcciones_;
 		RedSocial redesSociales_;
 
@@ -59,7 +58,78 @@ namespace agenda{
 			redesSociales_=red;
 		}
 
-	};
+	const std::string& getAnotaciones() const {
+		return anotaciones_;
+	}
+
+	void setAnotaciones(const std::string& anotaciones) {
+		anotaciones_ = anotaciones;
+	}
+
+	const std::string& getApellidos() const {
+		return apellidos_;
+	}
+
+	void setApellidos(const std::string& apellidos) {
+		apellidos_ = apellidos;
+	}
+
+	const std::list<Direccion>& getDirecciones() const {
+		return direcciones_;
+	}
+
+	void setDirecciones(const std::list<Direccion>& direcciones) {
+		direcciones_ = direcciones;
+	}
+
+	const std::string& getDni() const {
+		return dni_;
+	}
+
+	void setDni(const std::string& dni) {
+		dni_ = dni;
+	}
+
+	const std::string& getEmail() const {
+		return email_;
+	}
+
+	void setEmail(const std::string& email) {
+		email_ = email;
+	}
+
+	const std::string& getMovil() const {
+		return movil_;
+	}
+
+	void setMovil(const std::string& movil) {
+		movil_ = movil;
+	}
+
+	const std::string& getNombre() const {
+		return nombre_;
+	}
+
+	void setNombre(const std::string& nombre) {
+		nombre_ = nombre;
+	}
+
+	const RedSocial& getRedesSociales() const {
+		return redesSociales_;
+	}
+
+	void setRedesSociales(const RedSocial& redesSociales) {
+		redesSociales_ = redesSociales;
+	}
+
+	const std::string& getTelefono() const {
+		return telefono_;
+	}
+
+	void setTelefono(const std::string& telefono) {
+		telefono_ = telefono;
+	}
+};
 
 }
 #endif /* CONTACTO_H_ */

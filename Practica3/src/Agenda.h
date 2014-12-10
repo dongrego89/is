@@ -9,19 +9,25 @@
 #define AGENDA_H_
 
 #include<string>
-#include "Contacto.h"
-#include "GestorDBInterfaz.h"
 #include <list>
 
-namespace agenda{
-class Agenda {
-private:
-	std::list<Contacto> contactos_;
-	GestorDBInterfaz GestorDB;
-public:
-	Agenda();
+#include "Contacto.h"
+#include "GestorDBInterfaz.h"
 
-	virtual ~Agenda();
-};
+namespace agenda{
+	class Agenda {
+	private:
+		std::list<Contacto> contactos_;
+		GestorDBInterfaz * GestorDB;//Revisarlo !!
+
+	public:
+		Agenda();
+
+		std::list<Contacto> buscar(std::string apellido);
+		void insertar(const Contacto &c);
+
+		void modificar(Contacto &c);
+
+	};
 }
 #endif /* AGENDA_H_ */
