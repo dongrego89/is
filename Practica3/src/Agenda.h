@@ -10,11 +10,12 @@
 
 #include<string>
 #include "Contacto.h"
+#include "GestorDBInterfaz.h"
 
 namespace agenda{
 class Agenda {
 private:
-	list<Contacto> contactos_;
+	std::list<Contacto> contactos_;
 
 public:
 	Agenda();
