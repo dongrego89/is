@@ -10,6 +10,7 @@
 
 #include<string>
 #include "Contacto.h"
+#include "GestorDBInterfaz.h"
 #include <list>
 
 namespace agenda{
