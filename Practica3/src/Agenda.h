@@ -17,7 +17,7 @@ namespace agenda{
 class Agenda {
 private:
 	std::list<Contacto> contactos_;
-
+	GestorDBInterfaz GestorDB;
 public:
 	Agenda();
 

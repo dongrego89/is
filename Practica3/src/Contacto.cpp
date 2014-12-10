@@ -9,10 +9,6 @@
 
 namespace agenda{
 
-int Agenda::getasodiasd(){
-	
-	
-}
 
 }
 
