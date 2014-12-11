@@ -13,14 +13,14 @@
 
 namespace agenda {
 
-class GestorDBInterfaz {
+	class GestorDBInterfaz {
 
-	public:
-	GestorDBInterfaz();
-	virtual bool guardar(std::list<Contacto> lista)=0;
-	virtual std::list<Contacto> cargar()=0;
-	virtual ~GestorDBInterfaz();
-};
+		public:
+		GestorDBInterfaz();
+		virtual bool guardar(std::list<Contacto> lista)=0;
+		virtual std::list<Contacto> cargar()=0;
+		virtual ~GestorDBInterfaz();
+	};
 
 }
 #endif /* GESTORDBINTERFAZ_H_ */
