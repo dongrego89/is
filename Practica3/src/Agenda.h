@@ -23,10 +23,11 @@ namespace agenda{
 	public:
 		Agenda();
 
-		std::list<Contacto> buscar(std::string apellido);
+		std::list<Contacto> buscar(std::string apellido, std::string dni="");
 		void insertar(const Contacto &c);
-
-		void modificar(Contacto &c);
+		void eliminar(std::string dni);
+		void modificar(std::string dni,Contacto &c);
+		void ordenar();
 
 	};
 }

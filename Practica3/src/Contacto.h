@@ -42,7 +42,7 @@ namespace agenda{
 		std::string email_;
 		std::string anotaciones_;
 		std::list<Direccion> direcciones_;
-		RedSocial redesSociales_;
+		std::list<RedSocial> redesSociales_;
 
 
 	public:
@@ -114,20 +114,20 @@ namespace agenda{
 		nombre_ = nombre;
 	}
 
-	const RedSocial& getRedesSociales() const {
-		return redesSociales_;
-	}
-
-	void setRedesSociales(const RedSocial& redesSociales) {
-		redesSociales_ = redesSociales;
-	}
-
 	const std::string& getTelefono() const {
 		return telefono_;
 	}
 
 	void setTelefono(const std::string& telefono) {
 		telefono_ = telefono;
+	}
+
+	const std::list<RedSocial>& getRedesSociales() const {
+		return redesSociales_;
+	}
+
+	void setRedesSociales(const std::list<RedSocial>& redesSociales) {
+		redesSociales_ = redesSociales;
 	}
 };
 
