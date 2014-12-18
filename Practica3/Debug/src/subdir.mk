@@ -9,7 +9,7 @@ CPP_SRCS += \
 ../src/GestorDBFichero.cpp \
 ../src/GestorDBInterfaz.cpp \
 ../src/MenuTerminal.cpp \
-../src/Practica3.cpp 
+../src/programaPrincipalAgenda.cpp 
 
 OBJS += \
 ./src/Agenda.o \
@@ -17,7 +17,7 @@ OBJS += \
 ./src/GestorDBFichero.o \
 ./src/GestorDBInterfaz.o \
 ./src/MenuTerminal.o \
-./src/Practica3.o 
+./src/programaPrincipalAgenda.o 
 
 CPP_DEPS += \
 ./src/Agenda.d \
@@ -25,7 +25,7 @@ CPP_DEPS += \
 ./src/GestorDBFichero.d \
 ./src/GestorDBInterfaz.d \
 ./src/MenuTerminal.d \
-./src/Practica3.d 
+./src/programaPrincipalAgenda.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
