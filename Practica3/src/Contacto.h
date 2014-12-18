@@ -12,18 +12,14 @@
 #include<list>
 
 namespace agenda{
-
-	enum tipoVia{Calle,Avenida,Plaza,Carretera};
-	enum tipoRed{Twitter,Facebook,Instagram,Tuenti};
-
 	typedef struct{
-		tipoRed nombre;
+		std::string nombre;
 		std::string url;
 
 	}RedSocial;
 
 	typedef struct{
-		tipoVia via;
+		std::string via;
 		std::string calle;
 		int cp;
 		int numero;
@@ -46,8 +42,8 @@ namespace agenda{
 
 
 	public:
-		Contacto(std::string dni,std::string nom, std::string ape,std::string tel,std::string mov, std::string ema,RedSocial red, std::list<Direccion> dir, std::string ano=""){
-			dni_=dni;
+		Contacto(/*std::list<RedSocial> red, std::list<Direccion> dir,std::string dni="",std::string nom="", std::string ape="",std::string tel="",std::string mov="", std::string ema="", std::string ano=""*/){
+			/*dni_=dni;
 			nombre_=nom;
 			apellidos_=ape;
 			telefono_=tel;
@@ -55,7 +51,7 @@ namespace agenda{
 			email_=ema;
 			anotaciones_=ano;
 			direcciones_=dir;
-			redesSociales_=red;
+			redesSociales_=red;*/
 		}
 
 	const std::string& getAnotaciones() const {

@@ -14,20 +14,34 @@
 #include "Contacto.h"
 #include "GestorDBInterfaz.h"
 
+
+
 namespace agenda{
+
+typedef std::list<Contacto>::iterator Contacto_it;
+
 	class Agenda {
 	private:
 		std::list<Contacto> contactos_;
-		GestorDBInterfaz * GestorDB;//Revisarlo !!
+		GestorDBInterfaz *GestorDB;
 
 	public:
-		Agenda();
+		Agenda(GestorDBInterfaz * p): GestorDB(p){};
 
-		std::list<Contacto> buscar(std::string apellido, std::string dni="");
+		std::list<Contacto> buscarApellido(std::string apellido);
+
+		Contacto_it buscarDni(std::string dni);//metodo auxiliar de modificar
+
 		void insertar(const Contacto &c);
 		void eliminar(std::string dni);
 		void modificar(std::string dni,Contacto &c);
 		void ordenar();
+		std::list<Contacto> mostrarAgenda(){
+			return GestorDB->cargar();
+		}
+
+
+
 
 	};
 }

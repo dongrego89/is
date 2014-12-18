@@ -1,0 +1,4 @@
+30654654S,Grego,corpas,95744545,665454,email guay,anotacion
+avda,esa misma,1414,1,2,3,4
+twitter,asdasdasdasd
+,0,0,,0,

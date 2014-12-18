@@ -13,8 +13,6 @@
 #include <list>
 #include <string>
 
-//#include "GestorDBInterfaz.h"
-
 namespace agenda {
 	class GestorDBFichero : public GestorDBInterfaz{
 
@@ -23,10 +21,11 @@ namespace agenda {
 
 
 	public:
-		GestorDBFichero(std::string nomFich) : GestorDBInterfaz(), nomFich_(nomFich){}
-
+		GestorDBFichero(std::string nomFich) : nomFich_(nomFich){};
+		virtual ~GestorDBFichero() {};
 		bool guardar(std::list<Contacto> lista);
 		std::list<Contacto> cargar();
+		std::string getNomFich()const{return nomFich_;}
 
 	};
 }
