@@ -29,7 +29,10 @@ namespace agenda{
 		archivo.open(getNomFich().c_str());
 		if(archivo.is_open()){
 
+
 			for(c=lista.begin();c!=lista.end();c++){//Lista de contactos
+
+
 				archivo << c->getDni() << ",";
 				archivo << c->getNombre() << ",";
 				archivo << c->getApellidos() << ",";
@@ -41,6 +44,7 @@ namespace agenda{
 
 				std::list<Direccion> dir = (*c).getDirecciones();
 
+
 				for(d=dir.begin();d!=dir.end();d++){//Lista de direcciones
 					archivo << d->via << ",";
 					archivo << d->calle << ",";
@@ -50,19 +54,20 @@ namespace agenda{
 					archivo << d->piso << ",";
 					archivo << d->puerta << "\n";
 
-					std::cout << "\nguardando direccion";
+
 
 				}
 
 				std::list<RedSocial> red = (*c).getRedesSociales();
 
+
 				for(r=red.begin();r!=red.end();r++){//Lista de redes sociales
 					archivo << r->nombre << ",";
 					archivo << r->url << "\n";
-					std::cout << "\nguardando red social";
+
 				}
 
-				std::cout << "\n guardando contacto";
+
 			}
 		archivo.close();
 		return true;//Guardado en fichero con exito

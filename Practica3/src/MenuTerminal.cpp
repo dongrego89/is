@@ -95,11 +95,11 @@ namespace agenda {
 
 		cout << "¿Cuantas direcciones postales tiene el contacto?" << endl;
 		cin >> direcciones;
-		limpiaCin();
+		cin.ignore(256,'\n');
 
 		cout << "¿Cuantas cuentas en redes sociales vas a guardar de este contacto?" << endl;
 		cin >> redes;
-		limpiaCin();
+		cin.ignore(256,'\n');
 
 
 		linea();
@@ -143,13 +143,13 @@ namespace agenda {
 
 			cout << "CP " << endl;
 			cin >> DireccionAuxiliar.cp;
-			limpiaCin();
+			cin.ignore(256,'\n');
 
 
 
 			cout << "Numero " << endl;
 			cin >> DireccionAuxiliar.numero;
-			limpiaCin();
+			cin.ignore(256,'\n');
 
 
 			cout << "Portal: " << endl;
@@ -157,7 +157,7 @@ namespace agenda {
 
 			cout << "Piso " << endl;
 			cin >> DireccionAuxiliar.piso;
-			limpiaCin();
+			cin.ignore(256,'\n');
 
 			cout << "Puerta " << endl;
 			getline(cin,DireccionAuxiliar.puerta);

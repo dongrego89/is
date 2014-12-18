@@ -62,7 +62,7 @@ void Agenda::insertar(const Contacto &c) { //Comprobar que se ha insertado? Guar
 	auxiliar = GestorDB->cargar();
 	auxiliar.push_back(c);
 	GestorDB->guardar(auxiliar);
-	this->ordenar();
+	//this->ordenar();
 
 }
 
