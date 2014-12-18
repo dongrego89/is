@@ -112,7 +112,7 @@ namespace agenda{
 				auxContacto.setEmail(email);
 				auxContacto.setAnotaciones(anotaciones);
 
-				while(archivo.getline(via,200,',')){
+				    archivo.getline(via,200,',');
 					archivo.getline(calle,200,',');
 					archivo.getline(cp,200,',');
 					archivo.getline(numero,200,',');
@@ -122,27 +122,25 @@ namespace agenda{
 
 					auxDireccion.via =via;
 					auxDireccion.calle=calle;
-					auxDireccion.cp=atoi(cp);
-					auxDireccion.numero=atoi(numero);
+					auxDireccion.cp=cp;
+					auxDireccion.numero=numero;
 					auxDireccion.portal=portal;
-					auxDireccion.piso=atoi(piso);
+					auxDireccion.piso=piso;
 					auxDireccion.puerta=puerta;
 
 					auxDirecciones.push_back(auxDireccion);//Añadimos nuevo elemento de direccion a la lista
-				}
+					auxContacto.setDirecciones(auxDirecciones);
+					auxDirecciones.clear();//limpiamos
 
-				auxContacto.setDirecciones(auxDirecciones);
-
-				while(archivo.getline(red,200,',')){
+				    archivo.getline(red,200,',');
 					archivo.getline(url,200,'\n');
 
 					auxRed.nombre=red;
 					auxRed.url=url;
 
 					auxRedesSociales.push_back(auxRed);
-				}
-
-				auxContacto.setRedesSociales(auxRedesSociales);
+					auxContacto.setRedesSociales(auxRedesSociales);
+					auxRedesSociales.clear();
 
 				auxContactos.push_back(auxContacto);
 

@@ -10,7 +10,7 @@
 #include "Agenda.h"
 #include "MenuTerminal.h"
 #include "GestorDBFichero.h"
-
+#include <cstdlib>
 
 using namespace std;
 using namespace agenda;
@@ -21,8 +21,9 @@ int main() {
 	Agenda a = Agenda(mi_gestor);
 
 	MenuTerminal m(a);
-
-	m.insertarContacto();
+	system("clear");
+	//m.insertarContacto();
+	m.visualizarAgenda();
 
 	cout << "" << endl; // prints 
 	return 0;

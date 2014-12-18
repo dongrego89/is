@@ -21,10 +21,10 @@ namespace agenda{
 	typedef struct{
 		std::string via;
 		std::string calle;
-		int cp;
-		int numero;
+		std::string cp;
+		std::string numero;
 		std::string portal;
-		int piso;
+		std::string piso;
 		std::string puerta;
 	}Direccion;
 

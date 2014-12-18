@@ -21,27 +21,28 @@ namespace agenda {
 		std::list<Direccion>::iterator d;
 		std::list<RedSocial>::iterator r;
 
-		cout << "Nombre y Apellidos: " << c.getNombre() << " " << c.getApellidos() << endl;
-		cout << "Telefono: " << c.getTelefono() << "Movil: " << c.getMovil() << endl;
-		cout << "Email: " << c.getEmail() << endl << "Anotaciones: " << endl << "'" << c.getAnotaciones() << "'" << endl;
+		linea();
+		cout <<"\t"<< "Nombre y Apellidos: " << c.getNombre() << " " << c.getApellidos() <<" DNI: "<< c.getDni() << endl;
+		cout <<"\t"<< "Telefono: " << c.getTelefono() << " Movil: " << c.getMovil() << endl;
+		cout <<"\t"<< "Email: " << c.getEmail() << endl <<"\t"<< "Anotaciones: " << endl << "\t'"<< c.getAnotaciones() << "'" << endl;
 
-		cout << "Direcciones: " << endl;
+		cout <<"\t" <<"Direccion/es: " << endl;
 
 
 		std::list<Direccion> ld =c.getDirecciones();
 
-		for(d=ld.begin();d!=ld.end();d++){//revisar enum numerico para el tipo de la via
-			cout << d->via << d->calle << ", Nº " << d->numero << " Portal " << d->portal << " Piso: " << d->piso << " Puerta" << d->puerta;
+		for(d=ld.begin();d!=ld.end();d++){
+			cout <<"\t"<<"| "<< d->via <<" "<< d->calle <<" | Codigo postal: "<< d->cp << " | Nº"<< d->numero << " | Portal: " << d->portal << " | Piso: " << d->piso << " | Puerta:" << d->puerta <<" |"<<endl;
 
 		}
 
-		cout << "Redes Sociales: " << endl;
+		cout <<"\t"<< "Redes Sociales: " << endl;
 
 
 		std::list<RedSocial> rs =c.getRedesSociales();
 
-		for(r=rs.begin();r!=rs.end();r++){//Revisar enum numerico para la red social
-			cout << "Red Social: " << r->nombre << " Usuario: " << r->url;
+		for(r=rs.begin();r!=rs.end();r++){
+			cout <<"\t"<< "Red Social: " << r->nombre << " Usuario: " << r->url;
 		}
 
 		linea();
@@ -70,6 +71,8 @@ namespace agenda {
 		auxiliar=agenda_.mostrarAgenda();
 
 		Contacto_it i;
+		cout << "\t_________________________________________________________________________________\n\n";
+		cout <<"\t"<<"*******************************AGENDA DE CONTACTOS*******************************";
 
 		for(i=auxiliar.begin();i!=auxiliar.end();i++){
 			this->visualizarContacto(i);//Imprimir contacto a contacto
@@ -142,22 +145,25 @@ namespace agenda {
 			getline(cin,DireccionAuxiliar.calle);
 
 			cout << "CP " << endl;
-			cin >> DireccionAuxiliar.cp;
-			cin.ignore(256,'\n');
+			//cin >> DireccionAuxiliar.cp;
+			getline(cin,DireccionAuxiliar.cp);
+			//cin.ignore(256,'\n');
 
 
 
 			cout << "Numero " << endl;
-			cin >> DireccionAuxiliar.numero;
-			cin.ignore(256,'\n');
+			//cin >> DireccionAuxiliar.numero;
+			getline(cin,DireccionAuxiliar.numero);
+			//cin.ignore(256,'\n');
 
 
 			cout << "Portal: " << endl;
 			std::getline(cin,DireccionAuxiliar.portal);
 
 			cout << "Piso " << endl;
-			cin >> DireccionAuxiliar.piso;
-			cin.ignore(256,'\n');
+			//cin >> DireccionAuxiliar.piso;
+			getline(cin,DireccionAuxiliar.piso);
+			//cin.ignore(256,'\n');
 
 			cout << "Puerta " << endl;
 			getline(cin,DireccionAuxiliar.puerta);
