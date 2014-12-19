@@ -1,0 +1,3 @@
+buscar coincidencias de apellidos con funciones de cadenas substr
+metodo para generar codigo html y lanzar con firefox
+

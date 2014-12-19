@@ -10,3 +10,6 @@ TWITTER,DONGREGO
 85278285,MIGUEL ANGEL,SEDANO CABALLERO,6852585,5869665552,JOELS@..,LEPEPPE7
 CALLE,LUIS PONCE DE LEON,14200,7,A,3,8
 TWITTER,@MIGUEL...
+30999888E,Romualdo,Arrastrahambres Tornices,655444343,654898989,romutornices@wanadoo.miau,Le cantan los pies
+Avda,Borrico tuerto,14808,2,3,1,1
+fresqui,romualdinho
