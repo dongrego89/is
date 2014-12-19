@@ -123,7 +123,7 @@ void Agenda::imprimirHTML(){
 	std::ofstream archivo("agenda.html");
 
 	if(archivo.is_open()){
-		archivo << "<html><head><title>UCO AGENDA | Grupo I22</title></head><body>";
+		archivo << "<html><head><title>UCO AGENDA | Grupo I22</title><link rel='stylesheet' href='estilo.css' /></head><body>";
 		for(c=auxiliar.begin();c!=auxiliar.end();c++){
 			archivo << "<div class='contacto'><h1>"<< c->getNombre() << " " << c->getApellidos() << "</h1>";
 			archivo << "<div class='campo'>DNI: " << c->getDni() << "</div>";
