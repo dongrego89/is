@@ -30,7 +30,7 @@ typedef std::list<Contacto>::iterator Contacto_it;
 
 		std::list<Contacto> buscarApellido(std::string apellido);
 
-		Contacto_it buscarDni(std::string dni);//metodo auxiliar de modificar
+		Contacto buscarDni(std::string dni);//metodo auxiliar de modificar
 
 		void insertar(const Contacto &c);
 		void eliminar(std::string dni);

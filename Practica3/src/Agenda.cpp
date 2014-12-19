@@ -30,76 +30,63 @@ std::list<Contacto> Agenda::buscarApellido(std::string apellido) {
 	return retorno;
 }
 
-Contacto_it Agenda::buscarDni(std::string dni) {
-	//cargar del fichero
-	std::list<Contacto> auxiliar; //fichero completo hecho lista
-	auxiliar = GestorDB->cargar();
-
-	//Contacto retorno; //objeto a devolver
-
-	Contacto_it i;
-	Contacto_it j;
-
-	for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
-
-			if (i->getDni() == dni) {
-				j=i; //iterator i es un puntero, por tanto para pasar su valor es necesario el operador *
-			}
-
-		}
-	return j;
-	}
-
-
-
-
-
-
-
-
 void Agenda::insertar(const Contacto &c) { //Comprobar que se ha insertado? Guardar devuelve un bool , podriamos usarlo?
 	std::list<Contacto> auxiliar;
 	auxiliar = GestorDB->cargar();
 	auxiliar.push_back(c);
 	GestorDB->guardar(auxiliar);
-	//this->ordenar();
+	this->ordenar();
 
 }
 
 void Agenda::eliminar(std::string dni) {
 	std::list<Contacto> auxiliar;
-	std::list<Contacto>::iterator i;
+	std::list<Contacto>::iterator i,j;
 
 	auxiliar = GestorDB->cargar();
 
 	for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
 		if (i->getDni() == dni) {
-			auxiliar.erase(i);
+			j=i;
+
 		}
 	}
+	auxiliar.erase(j);
+	ordenar();
 	GestorDB->guardar(auxiliar);
 
 }
 
 void Agenda::modificar(std::string dni, Contacto &c) {
-	Contacto_it encontrado;
 	std::list<Contacto> auxiliar;
-	encontrado = buscarDni(dni);
+	auxiliar = GestorDB->cargar();
 
-	*encontrado = c;
+	std::list<Contacto>::iterator i;
+
+
+		for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
+
+				if (i->getDni() == dni) {
+					*i=c; //iterator i es un puntero, por tanto para pasar su valor es necesario el operador *
+				}
+
+			}
+		ordenar();
+		GestorDB->guardar(auxiliar);
+
 
 }
+
+bool funcion_compara_apellidos(const Contacto &c1, const Contacto &c2) {
+				return c1.getApellidos() < c2.getApellidos();
+			}
 
 void Agenda::ordenar() {
 	std::list<Contacto> auxiliar;
 	auxiliar = GestorDB->cargar();
 
+	auxiliar.sort(funcion_compara_apellidos);
 
-
-	//auxiliar.sort([](const Contacto & a, const Contacto & b) { return a.getApellidos() < b.getApellidos(); });
-
-
-	//auxiliar.sort(LastNameComp());
 	GestorDB->guardar(auxiliar);
 }
 }

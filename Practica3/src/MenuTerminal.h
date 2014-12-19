@@ -38,11 +38,7 @@ public:
 		std::cout << "\n\t_________________________________________________________________________________\n";
 
 	}
-	void limpiaCin(){
-		std::cin.ignore(10000,'\n');
-		std::cin.clear();
-		std::cin.get();
-	}
+
 };
 
 } /* namespace agenda */

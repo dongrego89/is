@@ -36,7 +36,7 @@ namespace agenda {
 
 		}
 
-		cout <<"\t"<< "Redes Sociales: " << endl;
+		cout <<"\t"<< "Red/es Social/es: " << endl;
 
 
 		std::list<RedSocial> rs =c.getRedesSociales();
@@ -52,7 +52,7 @@ namespace agenda {
 
 	void MenuTerminal::buscarContacto(){
 		std::string apellido;
-		cout <<"\t"<< "Introduce el apellido del contacto a buscar:";
+		cout <<"\t"<< "Introduce los apellidos del contacto a buscar:"<<endl<<"\t";
 		std::getline(cin,apellido);
 
 		std::list<Contacto>auxiliar;
@@ -96,76 +96,67 @@ namespace agenda {
 
 		linea();
 
-		cout <<"\t"<< "¿Cuantas direcciones vas a guardar de este contacto?" << endl;
+		cout <<"\t"<< "¿Cuantas direcciones vas a guardar de este contacto?" << endl<<"\t";
 		cin >> direcciones;
 		cin.ignore(256,'\n');
 
-		cout <<"\t"<< "¿Cuantas cuentas en redes sociales vas a guardar de este contacto?" << endl;
+		cout <<"\t"<< "¿Cuantas cuentas en redes sociales vas a guardar de este contacto?" << endl<<"\t";
 		cin >> redes;
 		cin.ignore(256,'\n');
 
 
 		linea();
 
-		cout <<"\t"<< "Introduce el dni del contacto: " << endl;
+		cout <<"\t"<< "Introduce el dni del contacto: " << endl<<"\t";
 		getline(cin,dni);
 		c.setDni(dni);
 
-		cout <<"\t"<< "Introduce el nombre del contacto: " << endl;
+		cout <<"\t"<< "Introduce el nombre del contacto: " << endl<<"\t";
 		getline(cin,nombre);
 		c.setNombre(nombre);
 
-		cout <<"\t"<< "Introduce los apellidos del contacto: " << endl;
+		cout <<"\t"<< "Introduce los apellidos del contacto: " << endl<<"\t";
 		getline(cin,apellidos);
 		c.setApellidos(apellidos);
 
-		cout <<"\t"<< "Introduce el telefono del contacto: " << endl;
+		cout <<"\t"<< "Introduce el telefono del contacto: " << endl<<"\t";
 		getline(cin,telefono);
 		c.setTelefono(telefono);
 
-		cout <<"\t" << "Introduce el movil del contacto: " << endl;
+		cout <<"\t" << "Introduce el movil del contacto: " << endl<<"\t";
 		getline(cin,movil);
 		c.setMovil(movil);
 
-		cout <<"\t" << "Introduce el email del contacto: " << endl;
+		cout <<"\t" << "Introduce el email del contacto: " << endl<<"\t";
 		getline(cin,email);
 		c.setEmail(email);
 
-		cout <<"\t"<< "Introduce anotaciones del contacto: " << endl;
+		cout <<"\t"<< "Introduce anotaciones del contacto: " << endl<<"\t";
 		getline(cin,anotaciones);
 		c.setAnotaciones(anotaciones);
 
 
 		for(i=0;i<direcciones;i++){
 
-			cout <<"\t"<< "Tipo de via: " << endl;
+			cout <<"\t"<< "Tipo de via: " << endl<<"\t";
 			getline(cin,DireccionAuxiliar.via);
 
-			cout <<"\t"<< "Nombre de calle: " << endl;
+			cout <<"\t"<< "Nombre de la via: " << endl<<"\t";
 			getline(cin,DireccionAuxiliar.calle);
 
-			cout <<"\t"<< "CP " << endl;
-			//cin >> DireccionAuxiliar.cp;
+			cout <<"\t"<< "CP " << endl<<"\t";
 			getline(cin,DireccionAuxiliar.cp);
-			//cin.ignore(256,'\n');
 
-
-
-			cout <<"\t"<< "Numero " << endl;
-			//cin >> DireccionAuxiliar.numero;
+			cout <<"\t"<< "Numero " << endl<<"\t";
 			getline(cin,DireccionAuxiliar.numero);
-			//cin.ignore(256,'\n');
 
-
-			cout <<"\t" << "Portal: " << endl;
+			cout <<"\t" << "Portal: " << endl<<"\t";
 			std::getline(cin,DireccionAuxiliar.portal);
 
-			cout <<"\t"<< "Piso " << endl;
-			//cin >> DireccionAuxiliar.piso;
+			cout <<"\t"<< "Piso " << endl<<"\t";
 			getline(cin,DireccionAuxiliar.piso);
-			//cin.ignore(256,'\n');
 
-			cout <<"\t"<< "Puerta " << endl;
+			cout <<"\t"<< "Puerta " << endl<<"\t";
 			getline(cin,DireccionAuxiliar.puerta);
 
 			DireccionAux.push_back(DireccionAuxiliar);
@@ -176,10 +167,10 @@ namespace agenda {
 
 		for(i=0;i<redes;i++){
 
-			cout <<"\t"<< "Nombre de la red: " << endl;
+			cout <<"\t"<< "Nombre de la red: " << endl<<"\t";
 			std::getline(cin,RedAuxiliar.nombre);
 
-			cout <<"\t" << "Id de usuario: " << endl;
+			cout <<"\t" << "Id de usuario: " << endl<<"\t";
 			std::getline(cin,RedAuxiliar.url);
 
 			RedesAux.push_back(RedAuxiliar);
@@ -193,8 +184,7 @@ void MenuTerminal::modificarContacto(){
 	std::string dni;
 	Contacto c;
 
-	cout <<"\t"<< "Introduce el dni del contacto que deseas modificar:" << endl;
-
+	cout <<"\t"<< "Introduce el dni del contacto que deseas modificar:" << endl<<"\t";
 	getline(cin,dni);
 
 	this->rellenarContacto(c);
@@ -213,8 +203,7 @@ void MenuTerminal::insertarContacto(){
 void  MenuTerminal::borrarContacto(){
 
 	std::string dni;
-	cout <<"\t"<< "Introduce el dni del contacto que deseas borrar:" << endl;
-
+	cout <<"\t"<< "Introduce el dni del contacto que deseas borrar:" << endl<<"\t";
 	std::getline(cin,dni);
 
 	agenda_.eliminar(dni);
