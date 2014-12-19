@@ -39,7 +39,9 @@ typedef std::list<Contacto>::iterator Contacto_it;
 		std::list<Contacto> mostrarAgenda(){
 			return GestorDB->cargar();
 		}
+		std::string minuscula(std::string cadena);
 
+		void imprimirHTML();
 
 
 

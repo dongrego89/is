@@ -39,6 +39,7 @@ public:
 
 	}
 
+	void imprimeFormato(){agenda_.imprimirHTML();}
 };
 
 } /* namespace agenda */

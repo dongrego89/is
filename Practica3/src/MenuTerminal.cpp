@@ -15,8 +15,8 @@
 using namespace std;
 
 namespace agenda {
+void MenuTerminal::visualizarContacto(Contacto_it iterador){
 
-	void MenuTerminal::visualizarContacto(Contacto_it iterador){
 		Contacto c=*iterador;
 		std::list<Direccion>::iterator d;
 		std::list<RedSocial>::iterator r;
@@ -26,24 +26,33 @@ namespace agenda {
 		cout <<"\t"<< "Telefono: " << c.getTelefono() << " Movil: " << c.getMovil() << endl;
 		cout <<"\t"<< "Email: " << c.getEmail() << endl <<"\t"<< "Anotaciones: " << endl << "\t'"<< c.getAnotaciones() << "'" << endl;
 
-		cout <<"\t" <<"Direccion/es: " << endl;
+		cout <<endl<<"\t" <<"Direccion/es: " << endl;
 
 
 		std::list<Direccion> ld =c.getDirecciones();
 
 		for(d=ld.begin();d!=ld.end();d++){
-			cout <<"\t"<<"| "<< d->via <<" "<< d->calle <<" | Codigo postal: "<< d->cp << " | Nº"<< d->numero << " | Portal: " << d->portal << " | Piso: " << d->piso << " | Puerta:" << d->puerta <<" |"<<endl;
+			if(d->via!=""){
+				cout <<endl<<"\t"<<"| "<< d->via <<" "<< d->calle <<" | Codigo postal: "<< d->cp << " | Nº"<< d->numero << " | Portal: " << d->portal << " | Piso: " << d->piso << " | Puerta:" << d->puerta <<" |";
+
+			}
 
 		}
 
-		cout <<"\t"<< "Red/es Social/es: " << endl;
+		cout <<endl<< endl<<"\t"<< "Red/es Social/es: " << endl;
 
 
 		std::list<RedSocial> rs =c.getRedesSociales();
 
+
+
 		for(r=rs.begin();r!=rs.end();r++){
-			cout <<"\t"<< "Red Social: " << r->nombre << " Usuario: " << r->url;
+			if(r->nombre!=""){
+				cout << endl <<"\t"<< "Red Social: " << r->nombre << " Usuario: " << r->url;
+			}
 		}
+
+
 
 		linea();
 
@@ -80,7 +89,7 @@ namespace agenda {
 	}
 
 	void MenuTerminal::rellenarContacto(Contacto &c){
-		int redes, direcciones,i;
+		int redes, direcciones,i,e;
 
 		std::string dni,nombre,apellidos,telefono,movil,email,anotaciones;
 
@@ -133,6 +142,7 @@ namespace agenda {
 
 		cout <<"\t"<< "Introduce anotaciones del contacto: " << endl<<"\t";
 		getline(cin,anotaciones);
+
 		c.setAnotaciones(anotaciones);
 
 
@@ -151,13 +161,28 @@ namespace agenda {
 			getline(cin,DireccionAuxiliar.numero);
 
 			cout <<"\t" << "Portal: " << endl<<"\t";
-			std::getline(cin,DireccionAuxiliar.portal);
+			getline(cin,DireccionAuxiliar.portal);
 
 			cout <<"\t"<< "Piso " << endl<<"\t";
 			getline(cin,DireccionAuxiliar.piso);
 
 			cout <<"\t"<< "Puerta " << endl<<"\t";
 			getline(cin,DireccionAuxiliar.puerta);
+
+			DireccionAux.push_back(DireccionAuxiliar);
+
+		}
+
+		for(e=i;e<3;e++){//Añade los que faltan como vacío
+			DireccionAuxiliar.via="";
+			DireccionAuxiliar.calle="";
+			DireccionAuxiliar.cp="";
+			DireccionAuxiliar.numero="";
+			DireccionAuxiliar.portal="";
+			DireccionAuxiliar.piso="";
+			DireccionAuxiliar.puerta="";
+
+			cout << "Anadiendo " << DireccionAuxiliar.via << "," << DireccionAuxiliar.calle << endl;
 
 			DireccionAux.push_back(DireccionAuxiliar);
 
@@ -176,9 +201,18 @@ namespace agenda {
 			RedesAux.push_back(RedAuxiliar);
 		}
 
+
+		for(e=i;e<5;e++){//Añade los que faltan como vacío
+			RedAuxiliar.nombre="";
+			RedAuxiliar.url="";
+			cout << "Anadiendo " << RedAuxiliar.nombre << "," <<  RedAuxiliar.url << endl;
+			RedesAux.push_back(RedAuxiliar);
+		}
+
 		c.setRedesSociales(RedesAux);
 
 	}
+
 
 void MenuTerminal::modificarContacto(){
 	std::string dni;
