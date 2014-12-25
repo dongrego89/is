@@ -109,6 +109,8 @@ void Agenda::ordenar() {
 }
 void Agenda::imprimirHTML(){
 
+	int i=0;
+
 	std::list<Contacto> auxiliar = GestorDB->cargar();
 	std::list<Contacto>::iterator c;
 
@@ -123,8 +125,70 @@ void Agenda::imprimirHTML(){
 	std::ofstream archivo("agenda.html");
 
 	if(archivo.is_open()){
-		archivo << "<html><head><title>UCO AGENDA | Grupo I22</title><link rel='stylesheet' href='estilo.css' /></head><body>";
+		archivo << "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><meta http-equiv='X-UA-Compatible' content='IE=edge'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''><meta name='author' content=''><link rel='icon' href='bootstrap/favicon.ico'><title>Agenda de Pacientes | Grupo i22 | Ingenier&iacute;a del Software</title><!-- Bootstrap core CSS --><link href='bootstrap/css/bootstrap.min.css' rel='stylesheet'><link href='jumbotron-narrow.css' rel='stylesheet'><script src='bootstrap/js/ie-emulation-modes-warning.js'></script><link href='bootstrap/css/plugins/metisMenu/metisMenu.min.css' rel='stylesheet'><link href='bootstrap/css/plugins/social-buttons.css' rel='stylesheet'><link href='bootstrap/css/sb-admin-2.css' rel='stylesheet'><link href='bootstrap/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'><script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script></head><body><div class='container'><div class='jumbotron'><h1 style='text-align:center;'>Agenda de Pacientes</h1><h2 style='text-align:center;margin-left:40%;'>Grupo i22 | <small>Ingenería del software</small></h2></div>";
+//Cabecera html
+
+
+
 		for(c=auxiliar.begin();c!=auxiliar.end();c++){
+
+
+			archivo << "<div class='row marketing'><div class='panel panel-default'><div class='panel-heading'><h3>" << c->getNombre() << " " << c->getApellidos() << "</h3></div><div class='panel-body'><ul class='nav nav-pills'><li class='active'><a href='#datos"<< i << "-pills' data-toggle='tab'>Datos Personales</a></li><li><a href='#direcciones"<< i << "-pills' data-toggle='tab'>Direcciones</a></li><li><a href='#redes" << i << "-pills' data-toggle='tab'>Redes Sociales</a></li></ul><div class='tab-content'><div class='tab-pane fade in active' id='datos"<<i<<"-pills'><hr></hr>";
+				                                    archivo << "<p><strong>Nombre y Apellidos: </strong>"<< c->getNombre() << " " << c->getApellidos() << " <br>";
+				                                    archivo << "<strong>DNI: </strong>" << c->getDni() << "<br>";
+				                                    archivo << "<strong>Telefono: </strong>" << c->getTelefono() << "<br>";
+				                                   archivo << "<strong>Móvil: </strong> " << c->getMovil() << "<br>";
+				                                    archivo << "<strong>Correo electrónico: </strong>" << c->getEmail() << "<br>";
+				                                    archivo << "<strong>Anotaciones: </strong><p>" << c->getAnotaciones() << "</p></p></div>";
+
+				                                    archivo << "<div class='tab-pane fade' id='direcciones"<<i<<"-pills'>";
+
+
+				                                    direccion=c->getDirecciones();
+
+				                                    			for(d=direccion.begin();d!=direccion.end();d++){
+				                                    				if(d->calle!=""){
+				                                    				archivo << "<hr></hr>";
+
+				                                    				archivo << "<p><strong>" << d->via << "</strong> " << d->calle << "<br>";
+				                                    				archivo << 	"<strong>Código Postal: </strong> "<< d->cp <<"<br>";
+				                                    				archivo << 	"<strong>Nº: </strong>" << d->numero << " <strong>Portal: </strong>" << d->portal << "<br>";
+				                                    				archivo << "<strong>Piso: </strong>" << d->piso << "&ordm; " << d->puerta << "</p>";
+				                                    				}
+				                                    			}
+
+
+
+
+
+
+				                                    			archivo << "</div> <div class='tab-pane fade' id='redes"<<i<<"-pills'><hr></hr><div class='col-lg-3'>";
+				                                    			red=c->getRedesSociales();
+				                                    						for(r=red.begin();r!=red.end();r++){
+
+				                                    							if(r->nombre != ""){
+				                                    								//archivo << "<div class='red'><img src='src/imagenes/" << r->nombre << ".png'> " << r->url << "</div>";
+				                                    								archivo << "<a class='btn btn-block btn-social btn-" << r->nombre << "'>";
+				                                    								archivo << "<i class='fa fa-" << r->nombre << "'></i>" << r->url << "</a>";
+				                                    							}
+				                                    						}
+
+
+				                    			                          archivo << "<br></div>";
+
+
+
+				                                archivo << "</div></div></div></div></div><hr></hr>";
+
+
+
+
+
+
+/*
+
+
+
 			archivo << "<div class='contacto'><h1>"<< c->getNombre() << " " << c->getApellidos() << "</h1>";
 			archivo << "<div class='campo'>DNI: " << c->getDni() << "</div>";
 			archivo << "<div class='campo'>Telefono: " << c->getTelefono() << " Movil: " << c->getMovil() << "</div>";
@@ -135,7 +199,7 @@ void Agenda::imprimirHTML(){
 
 			for(d=direccion.begin();d!=direccion.end();d++){
 				if(d->calle!="")
-				archivo << "<div class='direccion'> CP " << d->cp << ". " << d->via << " " << d->calle << ", N&ordm; " << d->numero << ", Portal " << d->portal << d->piso << "&ordm;" << d->puerta << "</div>";
+				archivo << "<div class='direccion'> CP " << d->cp << ". " << d->via << " " << d->calle << ", N&ordm; " << d->numero << ", Portal " << d->portal << " " << d->piso << "&ordm; " << d->puerta << "</div>";
 
 			}
 
@@ -147,9 +211,20 @@ void Agenda::imprimirHTML(){
 			}
 
 			archivo << "</div>";
+
+
+*/
+
+
+
+
+
+		i++;
 		}
-		archivo << "</body></html>";
-	archivo.close();
+
+		archivo << " <footer class='footer'><p>&copy; i22 Corp. 2014</p> </footer></div> <!-- /container --><!-- jQuery --><script src='bootstrap/js/jquery.js'></script><!-- Bootstrap Core JavaScript --><script src='bootstrap/js/bootstrap.min.js'></script> <!-- Metis Menu Plugin JavaScript --><script src='bootstrap/js/plugins/metisMenu/metisMenu.min.js'></script><!-- Custom Theme JavaScript --><script src='bootstrap/js/sb-admin-2.js'></script><!-- IE10 viewport hack for Surface/desktop Windows 8 bug --><script src='bootstrap/js/ie10-viewport-bug-workaround.js'></script></body></html>";
+
+		archivo.close();
 
 	std::system("firefox agenda.html");
 	}
