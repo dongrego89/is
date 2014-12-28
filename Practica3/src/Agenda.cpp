@@ -48,37 +48,70 @@ std::list<Contacto> Agenda::buscarApellido(std::string apellido) {
 	return retorno;
 }
 
+bool Agenda::buscarDni(std::string dni){
+	std::list<Contacto> auxiliar;
+	auxiliar = GestorDB->cargar();
+
+	std::list<Contacto>::iterator i;
+	int encontrado;
+
+		for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
+
+				if (i->getDni() == dni) {
+					encontrado=1;
+				}
+
+			}
+		if (encontrado==1){
+			return true;
+		}
+		else{
+			return false;
+		}
+
+}
+
+
+
+
+
+
+
 void Agenda::insertar(const Contacto &c) { //Comprobar que se ha insertado? Guardar devuelve un bool , podriamos usarlo?
 	std::list<Contacto> auxiliar;
 	auxiliar = GestorDB->cargar();
 	auxiliar.push_back(c);
 	GestorDB->guardar(auxiliar);
-	this->ordenar();
+
 
 }
 
-void Agenda::eliminar(std::string dni) {
+bool Agenda::eliminar(std::string dni) {
 	std::list<Contacto> auxiliar;
 	std::list<Contacto>::iterator i,j;
-
+	int encontrado;
 	auxiliar = GestorDB->cargar();
 
 	for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
 		if (i->getDni() == dni) {
 			j=i;
-
+			encontrado=1;
 		}
 	}
-	auxiliar.erase(j);
-	ordenar();
-	GestorDB->guardar(auxiliar);
 
+	if(encontrado==1){
+		auxiliar.erase(j);
+		GestorDB->guardar(auxiliar);
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 void Agenda::modificar(std::string dni, Contacto &c) {
 	std::list<Contacto> auxiliar;
 	auxiliar = GestorDB->cargar();
-
 	std::list<Contacto>::iterator i;
 
 
@@ -86,27 +119,19 @@ void Agenda::modificar(std::string dni, Contacto &c) {
 
 				if (i->getDni() == dni) {
 					*i=c; //iterator i es un puntero, por tanto para pasar su valor es necesario el operador *
+
 				}
 
 			}
-		ordenar();
+
+
 		GestorDB->guardar(auxiliar);
 
 
 }
 
-bool funcion_compara_apellidos(const Contacto &c1, const Contacto &c2) {
-				return c1.getApellidos() < c2.getApellidos();
-			}
 
-void Agenda::ordenar() {
-	std::list<Contacto> auxiliar;
-	auxiliar = GestorDB->cargar();
 
-	auxiliar.sort(funcion_compara_apellidos);
-
-	GestorDB->guardar(auxiliar);
-}
 void Agenda::imprimirHTML(){
 
 	int i=0;
@@ -153,7 +178,7 @@ void Agenda::imprimirHTML(){
 				                                    				archivo << "<p><strong>" << d->via << "</strong> " << d->calle << "<br>";
 				                                    				archivo << 	"<strong>Código Postal: </strong> "<< d->cp <<"<br>";
 				                                    				archivo << 	"<strong>Nº: </strong>" << d->numero << " <strong>Portal: </strong>" << d->portal << "<br>";
-				                                    				archivo << "<strong>Piso: </strong>" << d->piso << "&ordm; " << d->puerta << "</p>";
+				                                    				archivo << "<strong>Piso: </strong>" << d->piso << " <strong>Puerta: </strong>" << d->puerta << "</p>";
 				                                    				}
 				                                    			}
 

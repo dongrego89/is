@@ -58,24 +58,7 @@ void MenuTerminal::visualizarContacto(Contacto_it iterador){
 
 
 	}
-
-	void MenuTerminal::buscarContacto(){
-		std::string apellido;
-		cout <<"\t"<< "Introduce los apellidos del contacto a buscar:"<<endl<<"\t";
-		std::getline(cin,apellido);
-
-		std::list<Contacto>auxiliar;
-
-		auxiliar=agenda_.buscarApellido(apellido);
-
-		Contacto_it i;
-		for(i=auxiliar.begin();i!=auxiliar.end();i++){
-			this->visualizarContacto(i);//Imprimir contacto a contacto
-		}
-
-	}
-
-	void MenuTerminal::visualizarAgenda(){
+void MenuTerminal::visualizarAgenda(){
 		std::list<Contacto>auxiliar;
 		auxiliar=agenda_.mostrarAgenda();
 
@@ -182,7 +165,7 @@ void MenuTerminal::visualizarContacto(Contacto_it iterador){
 			DireccionAuxiliar.piso="";
 			DireccionAuxiliar.puerta="";
 
-			cout << "Anadiendo " << DireccionAuxiliar.via << "," << DireccionAuxiliar.calle << endl;
+			//cout << "Anadiendo " << DireccionAuxiliar.via << "," << DireccionAuxiliar.calle << endl;
 
 			DireccionAux.push_back(DireccionAuxiliar);
 
@@ -205,13 +188,36 @@ void MenuTerminal::visualizarContacto(Contacto_it iterador){
 		for(e=i;e<5;e++){//Añade los que faltan como vacío
 			RedAuxiliar.nombre="";
 			RedAuxiliar.url="";
-			cout << "Anadiendo " << RedAuxiliar.nombre << "," <<  RedAuxiliar.url << endl;
+			//cout << "Anadiendo " << RedAuxiliar.nombre << "," <<  RedAuxiliar.url << endl;
 			RedesAux.push_back(RedAuxiliar);
 		}
 
 		c.setRedesSociales(RedesAux);
 
 	}
+
+void MenuTerminal::buscarContacto(){
+		std::string apellido;
+		cout <<"\t"<< "Introduce los apellidos del contacto a buscar:"<<endl<<"\t";
+		std::getline(cin,apellido);
+
+		std::list<Contacto>auxiliar;
+
+		auxiliar=agenda_.buscarApellido(apellido);
+
+		if(auxiliar.empty())
+		{
+			cout <<"\n\t\t" <<"*No se han encontrado resultados en la búsqueda.\n\n";
+		}
+
+		Contacto_it i;
+		for(i=auxiliar.begin();i!=auxiliar.end();i++){
+			this->visualizarContacto(i);//Imprimir contacto a contacto
+		}
+
+	}
+
+
 
 
 void MenuTerminal::modificarContacto(){
@@ -220,12 +226,24 @@ void MenuTerminal::modificarContacto(){
 
 	cout <<"\t"<< "Introduce el dni del contacto que deseas modificar:" << endl<<"\t";
 	getline(cin,dni);
+	cout <<"\n";
+
+	if(agenda_.buscarDni(dni)) {
 
 	this->rellenarContacto(c);
-
 	agenda_.modificar(dni,c);
+	cout <<"\n\t\t" <<"*Modificado con éxito.\n\n";
+	}
+
+	else{
+		cout <<"\n\t\t" <<"*El dni introducido no ha sido encontrado.\n\n";
+		}
 
 }
+
+
+
+
 
 void MenuTerminal::insertarContacto(){
 	Contacto c;
@@ -240,7 +258,16 @@ void  MenuTerminal::borrarContacto(){
 	cout <<"\t"<< "Introduce el dni del contacto que deseas borrar:" << endl<<"\t";
 	std::getline(cin,dni);
 
-	agenda_.eliminar(dni);
+	if(!agenda_.eliminar(dni))
+	{
+		cout <<"\n\t\t" <<"*El dni introducido no ha sido encontrado.\n\n";
+
+	}
+
+	else
+	{
+		cout <<"\n\t\t" <<"*Borrado con éxito.\n\n";
+	}
 
 }
 

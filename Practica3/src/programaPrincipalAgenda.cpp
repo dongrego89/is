@@ -22,6 +22,8 @@ int main() {
 
 	MenuTerminal m(a);
 
+	;
+
 	int menu;
 
 	system("clear");
@@ -37,6 +39,7 @@ int main() {
 	cout<<"\t"<<"Pulsa (0) para salir."<<endl;
 	cout<<"\t"<<"*************************************************************"<<endl<<"\t";
 	cin >>menu;
+	cout<<"\n";
 	cin.ignore(256,'\n');
 	switch(menu){
 	case 1:
@@ -47,6 +50,7 @@ int main() {
 		break;
 	case 3:
 		m.buscarContacto();
+
 		break;
 	case 4:
 		m.modificarContacto();

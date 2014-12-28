@@ -19,12 +19,17 @@ using namespace std;
 
 namespace agenda{
 
+bool funcion_compara_apellidos(const Contacto &c1, const Contacto &c2) {
+				return c1.getApellidos() < c2.getApellidos();
+			}
+
 	bool GestorDBFichero::guardar(std::list<Contacto> lista) {
 
 		std::list<Contacto>::iterator c;
 		std::list<Direccion>:: iterator d;
 		std::list<RedSocial>:: iterator r;
 
+		lista.sort(funcion_compara_apellidos); //Ordenamos la lista antes de guardarla
 
 		std::ofstream archivo;
 		archivo.open(getNomFich().c_str());

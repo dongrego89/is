@@ -1,3 +1,21 @@
+309994324T,Grego,Corpas Prieto,957320676,654195260,gregocorpas89@yahoo.es,Debe hasta de callarse
+Calle,Velasco,114610,3,1,1,1
+,,,,,,
+,,,,,,
+twitter,dongrego89
+,
+,
+,
+,
+80161057P,Josue,Fernandez Lopez,957562467,697994086,josue.pya@gmail.com,Tiene cita el día 26 de enero.
+calle,Jose Maria Peman,14200,6,-,-,-
+,,,,,,
+,,,,,,
+twitter,josuefernandz4
+facebook,Josue Fernandez Lopez
+,
+,
+,
 30242394X,Romualdo,Laredo Pellejero,987373484,622342234,rumalex@wanadoo.es,Nada en particular
 Avda,Lanzarote,34234,3,3,3,3
 Avda,Poeta Bizcoche,23423,2,2,2,2
@@ -23,14 +41,5 @@ Plaza,Maria Santisima del copón,14998,3,2,1,A
 twitter,fede343
 pinterest,fedle2
 facebook,fedei34
-,
-,
-309994324T,Grego,Corpas Prieto,957320676,654195260,gregocorpas89@yahoo.es,Debe hasta de callarse
-Calle,Velasco,114610,3,1,1,1
-,,,,,,
-,,,,,,
-twitter,dongrego89
-,
-,
 ,
 ,
