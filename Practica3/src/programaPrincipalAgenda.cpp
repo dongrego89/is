@@ -11,6 +11,7 @@
 #include "MenuTerminal.h"
 #include "GestorDBFichero.h"
 #include <cstdlib>
+#include <string>
 
 using namespace std;
 using namespace agenda;
@@ -25,6 +26,7 @@ int main() {
 	;
 
 	int menu;
+	string enter;
 
 	system("clear");
 
@@ -43,23 +45,44 @@ int main() {
 	cin.ignore(256,'\n');
 	switch(menu){
 	case 1:
+		system("clear");
 		m.visualizarAgenda();
+		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
+		getline(cin,enter);
+		system("clear");
 		break;
 	case 2:
+		system("clear");
 		m.insertarContacto();
-		break;
-	case 3:
-		m.buscarContacto();
+		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
+		getline(cin,enter);
+		system("clear");
 
 		break;
+	case 3:
+		system("clear");
+		m.buscarContacto();
+		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
+		getline(cin,enter);
+		system("clear");
+		break;
 	case 4:
+		system("clear");
 		m.modificarContacto();
+		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
+		getline(cin,enter);
+		system("clear");
 		break;
 	case 5:
+		system("clear");
 		m.borrarContacto();
+		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
+		getline(cin,enter);
+		system("clear");
 		break;
 	case 6:
 		m.imprimeFormato();
+		system("clear");
 		break;
 	}
 

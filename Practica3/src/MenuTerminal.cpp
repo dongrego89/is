@@ -84,7 +84,7 @@ void MenuTerminal::visualizarAgenda(){
 		Direccion DireccionAuxiliar;
 		std::list<Direccion> DireccionAux;
 
-		cout <<"\t"<<"INSERTANDO CONTACTO: " << endl;
+		cout <<"\t"<<"A CONTINUACIÓN RELLENA LOS DATOS DEL CONTACTO: " << endl;
 
 		linea();
 
