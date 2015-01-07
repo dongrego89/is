@@ -204,46 +204,6 @@ void Agenda::imprimirHTML(){
 
 
 				                                archivo << "</div></div></div></div></div><hr></hr>";
-
-
-
-
-
-
-/*
-
-
-
-			archivo << "<div class='contacto'><h1>"<< c->getNombre() << " " << c->getApellidos() << "</h1>";
-			archivo << "<div class='campo'>DNI: " << c->getDni() << "</div>";
-			archivo << "<div class='campo'>Telefono: " << c->getTelefono() << " Movil: " << c->getMovil() << "</div>";
-			archivo << "<div class='campo'>Email: " << c->getEmail() << "</div>";
-			archivo << "<div class='campo'>Anotaciones: <br> <textarea> " << c->getAnotaciones() << "</textarea></div>";
-
-			direccion=c->getDirecciones();
-
-			for(d=direccion.begin();d!=direccion.end();d++){
-				if(d->calle!="")
-				archivo << "<div class='direccion'> CP " << d->cp << ". " << d->via << " " << d->calle << ", N&ordm; " << d->numero << ", Portal " << d->portal << " " << d->piso << "&ordm; " << d->puerta << "</div>";
-
-			}
-
-			red=c->getRedesSociales();
-			for(r=red.begin();r!=red.end();r++){
-
-				if(r->nombre != "")
-					archivo << "<div class='red'><img src='src/imagenes/" << r->nombre << ".png'> " << r->url << "</div>";
-			}
-
-			archivo << "</div>";
-
-
-*/
-
-
-
-
-
 		i++;
 		}
 
@@ -251,7 +211,7 @@ void Agenda::imprimirHTML(){
 
 		archivo.close();
 
-	std::system("firefox agenda.html");
+	std::system("firefox file://$PWD/agenda.html");
 	}
 }
 }
