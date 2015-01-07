@@ -34,7 +34,7 @@ typedef std::list<Contacto>::iterator Contacto_it;
 
 		void insertar(const Contacto &c);
 		bool eliminar(std::string dni);
-		void modificar(std::string dni,Contacto &c);
+		bool modificar(std::string dni,Contacto &c);
 		std::list<Contacto> mostrarAgenda(){
 			return GestorDB->cargar();
 		}

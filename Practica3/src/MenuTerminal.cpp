@@ -221,22 +221,50 @@ void MenuTerminal::buscarContacto(){
 
 
 void MenuTerminal::modificarContacto(){
-	std::string dni;
-	Contacto c;
 
-	cout <<"\t"<< "Introduce el dni del contacto que deseas modificar:" << endl<<"\t";
-	getline(cin,dni);
+	Contacto c;
+	std::string apellido,dni;
+	std::list<Contacto> auxiliar;
+	std::list<Contacto>::iterator i;
+	int contador=1;
+
+	cout <<"\t"<< "Introduce el/los apellido/s para buscar al contacto que desea modificar:"<<endl<<"\t";
+	std::getline(cin,apellido);
 	cout <<"\n";
 
-	if(agenda_.buscarDni(dni)) {
+	auxiliar=agenda_.buscarApellido(apellido);
 
-	this->rellenarContacto(c);
-	agenda_.modificar(dni,c);
-	cout <<"\n\t\t" <<"*Modificado con éxito.\n\n";
-	}
 
-	else{
-		cout <<"\n\t\t" <<"*El dni introducido no ha sido encontrado.\n\n";
+	if(!auxiliar.empty())
+	{
+
+		cout <<"\tCoincidencias: ("<<auxiliar.size()<<")\n\n";
+		for(i=auxiliar.begin();i!=auxiliar.end();i++)
+		{	cout<<"\t\t\t\t\t\t|"<<contador<<"|";
+			this->visualizarContacto(i);
+			contador++;
+		}
+
+		cout <<"\n\t"<< "Ahora introduce el dni del contacto que desea modificar:"<<endl<<"\t";
+		std::getline(cin,dni);
+		cout <<"\n";
+
+		if(agenda_.buscarDni(dni))
+		{
+			this->rellenarContacto(c);
+			if(agenda_.modificar(dni,c))
+			{
+			cout <<"\n\t\t" <<"*Modificado con éxito.\n\n";
+			}
+			else
+			{
+			cout <<"\n\t\t" <<"*Error al introducir dni, el dni introducido no se encuentra entre los contactos.\n\n";
+			}
+		}
+		else
+		{
+			cout <<"\n\t\t" <<"*Error al introducir dni, el dni introducido no se encuentra entre los contactos.\n\n";
+		}
 		}
 
 }

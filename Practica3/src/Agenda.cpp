@@ -33,20 +33,28 @@ std::list<Contacto> Agenda::buscarApellido(std::string apellido) {
 	std::list<Contacto> retorno; //lista
 
 	std::list<Contacto>::iterator i;
-	for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
-		//if (i->getApellidos() == apellido) {
 
+	for (i = auxiliar.begin(); i != auxiliar.end(); i++)
+	{
 		apellidos=minuscula(i->getApellidos());//pasamos a minuscula los apellidos
 
 		std::size_t encontrado=apellidos.find(minuscula(apellido));//Buscamos el apellido en minuscula en los apellidos del contacto
 
-		if(encontrado!=std::string::npos){//Si hay resultado se añadirá a la lista de retorno
+		if(encontrado!=std::string::npos) //Si hay resultado se añadirá a la lista de retorno
+		{
 			retorno.push_back(*i); //iterator i es un puntero, por tanto para pasar su valor es necesario el operador *
 			// COMENTARIOS: Para añadir funcionalidad de más frecuentes i->incrementarFrecuente();
 		}
 	}
 
-	return retorno;
+	//if (retorno.empty()) //si la lista de retorno está vacía, devolver NULL
+	//{
+		//return NULL;
+	//}
+	//else
+	//{
+		return retorno;
+	//}
 }
 
 bool Agenda::buscarDni(std::string dni){
@@ -56,33 +64,19 @@ bool Agenda::buscarDni(std::string dni){
 	std::list<Contacto>::iterator i;
 	bool encontrado = false;
 
-		for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
+		for (i = auxiliar.begin(); i != auxiliar.end(); i++)
+		{
 
-				if (i->getDni() == dni) {
+				if (i->getDni() == dni)
+				{
 					encontrado=true;
 					/* COMENTARIO: incluso se puede hacer el return aquí para no
-					 * seguir recorriendo la lista
-					 * return encontrado;
-					 */
+					 * seguir recorriendo la lista*/
+					return encontrado;
 				}
-
-			}
-
-		/* COMENTARIOS
-		if (encontrado==1){
-			return true;
 		}
-		else{
-			return false;
-		}
-		*/
 
-	/* COMENTARIOS No hace falta y además estaba después de return */
-	/*GestorDB->guardar(auxiliar); */
-
-	return encontrado;
-
-
+		return false;
 
 }
 
@@ -92,7 +86,7 @@ bool Agenda::buscarDni(std::string dni){
 
 
 
-void Agenda::insertar(const Contacto &c) { //Comprobar que se ha insertado? Guardar devuelve un bool , podriamos usarlo?
+void Agenda::insertar(const Contacto &c) {
 	std::list<Contacto> auxiliar;
 	auxiliar = GestorDB->cargar();
 	auxiliar.push_back(c);
@@ -124,24 +118,23 @@ bool Agenda::eliminar(std::string dni) {
 	}
 }
 
-void Agenda::modificar(std::string dni, Contacto &c) {
+bool Agenda::modificar(std::string dni, Contacto &c) {
 	std::list<Contacto> auxiliar;
 	auxiliar = GestorDB->cargar();
 	std::list<Contacto>::iterator i;
 
 
-		for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
-
-				if (i->getDni() == dni) {
-					*i=c; //iterator i es un puntero, por tanto para pasar su valor es necesario el operador *
-
-				}
-
+		for (i = auxiliar.begin(); i != auxiliar.end(); i++)
+		{
+			if (i->getDni() == dni)
+			{
+				*i=c; //iterator i es un puntero, por tanto para pasar su valor es necesario el operador *
+				GestorDB->guardar(auxiliar);
+				return true;
 			}
+		}
 
-
-		GestorDB->guardar(auxiliar);
-
+		return false;
 
 }
 
