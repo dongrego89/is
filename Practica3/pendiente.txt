@@ -1,0 +1,10 @@
+a la hora de borrar/modificar contactos se busca por apellidos
+en caso de múltiples coincidencias se enumeraran y se pedirá al usuario que elija el contacto a modificar
+
+implementar frecuencia de contacto y listado por frecuencia (todos los que se hayan listado más de X veces)
+
+Para controlar errores si el metodo es bool que devuelva false, y si es string, int u otro tipo, que devuelva NULL
+
+git tag para nombrar a la versión
+
+

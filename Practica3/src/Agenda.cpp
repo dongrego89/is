@@ -42,6 +42,7 @@ std::list<Contacto> Agenda::buscarApellido(std::string apellido) {
 
 		if(encontrado!=std::string::npos){//Si hay resultado se añadirá a la lista de retorno
 			retorno.push_back(*i); //iterator i es un puntero, por tanto para pasar su valor es necesario el operador *
+			// COMENTARIOS: Para añadir funcionalidad de más frecuentes i->incrementarFrecuente();
 		}
 	}
 
@@ -53,21 +54,35 @@ bool Agenda::buscarDni(std::string dni){
 	auxiliar = GestorDB->cargar();
 
 	std::list<Contacto>::iterator i;
-	int encontrado;
+	bool encontrado = false;
 
 		for (i = auxiliar.begin(); i != auxiliar.end(); i++) {
 
 				if (i->getDni() == dni) {
-					encontrado=1;
+					encontrado=true;
+					/* COMENTARIO: incluso se puede hacer el return aquí para no
+					 * seguir recorriendo la lista
+					 * return encontrado;
+					 */
 				}
 
 			}
+
+		/* COMENTARIOS
 		if (encontrado==1){
 			return true;
 		}
 		else{
 			return false;
 		}
+		*/
+
+	/* COMENTARIOS No hace falta y además estaba después de return */
+	/*GestorDB->guardar(auxiliar); */
+
+	return encontrado;
+
+
 
 }
 

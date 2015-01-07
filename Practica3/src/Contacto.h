@@ -39,6 +39,7 @@ namespace agenda{
 		std::string anotaciones_;
 		std::list<Direccion> direcciones_;
 		std::list<RedSocial> redesSociales_;
+		// int frecuencia_;
 
 
 	public:
