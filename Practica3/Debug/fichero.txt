@@ -7,8 +7,8 @@ twitter,dongrego89
 ,
 ,
 ,
-80161057P,Josue,Fernandez Lopez,957562467,697994086,josue.pya@gmail.com,Tiene cita el día 26 de enero.
-calle,Jose Maria Peman,14200,6,-,-,-
+80161057P,Josué,Fernandez Lopez,957562467,697994086,josue.pya@gmail.com,Tiene cita el dia 19 de enero.
+calle,jose maria peman,14200,6,-,-,-
 ,,,,,,
 ,,,,,,
 twitter,josuefernandz4
@@ -30,15 +30,6 @@ Calle,Penitencia Sueca,123123,2,3,3,2
 Avda,Sentencia Italiana,231,3,3,3,3
 Plaza,España,13123,3,3,2,1
 twitter,asdasd
-,
-,
-,
-,
-888888,Javier,Sanchez Monedero,957565875,698745458,javi@uco.es,Profesor. (estoy probando si se modifica bien)
-calle,luis ponce,14000,8,A,3,8
-,,,,,,
-,,,,,,
-twitter,javism
 ,
 ,
 ,

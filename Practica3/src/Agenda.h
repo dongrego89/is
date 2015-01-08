@@ -31,18 +31,15 @@ typedef std::list<Contacto>::iterator Contacto_it;
 		std::list<Contacto> buscarApellido(std::string apellido);
 
 		bool buscarDni(std::string dni);//metodo auxiliar de modificar
-
-		void insertar(const Contacto &c);
+		bool insertar(const Contacto &c);
 		bool eliminar(std::string dni);
 		bool modificar(std::string dni,Contacto &c);
-		std::list<Contacto> mostrarAgenda(){
+		std::list<Contacto> mostrarAgenda()
+		{
 			return GestorDB->cargar();
 		}
 		std::string minuscula(std::string cadena);
-
 		void imprimirHTML();
-
-
 
 	};
 }

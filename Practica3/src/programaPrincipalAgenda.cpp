@@ -16,6 +16,8 @@
 using namespace std;
 using namespace agenda;
 
+void enter();
+
 int main() {
 	GestorDBFichero *mi_gestor = new GestorDBFichero("fichero.txt");
 
@@ -26,20 +28,19 @@ int main() {
 	;
 
 	int menu;
-	string enter;
 
 	system("clear");
 
 	do{
-	cout<<"\n"<<"\t"<<"********************OPCIONES DE LA AGENDA********************"<<endl;
-	cout<<"\t"<<"Pulsa (1) para visualizar la agenda completa."<<endl;
-	cout<<"\t"<<"Pulsa (2) para insertar un nuevo contacto en la agenda."<<endl;
-	cout<<"\t"<<"Pulsa (3) buscar un contacto en la agenda."<<endl;
-	cout<<"\t"<<"Pulsa (4) para modificar un contacto de la agenda."<<endl;
-	cout<<"\t"<<"Pulsa (5) para borrar un contacto de la agenda."<<endl;
-	cout<<"\t"<<"Pulsa (6) para mostrar la agenda en firefox."<<endl;
-	cout<<"\t"<<"Pulsa (0) para salir."<<endl;
-	cout<<"\t"<<"*************************************************************"<<endl<<"\t";
+	cout<<"\n"<<"\t\t\t\t"<<"********************OPCIONES DE LA AGENDA********************"<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (1) para visualizar la agenda completa."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (2) para insertar un nuevo contacto en la agenda."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (3) buscar un contacto en la agenda."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (4) para modificar un contacto de la agenda."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (5) para borrar un contacto de la agenda."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (6) para mostrar la agenda en firefox."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (0) para salir."<<endl;
+	cout<<"\t\t\t\t"<<"*************************************************************"<<endl<<"\t\t\t\t";
 	cin >>menu;
 	cout<<"\n";
 	cin.ignore(256,'\n');
@@ -47,37 +48,32 @@ int main() {
 	case 1:
 		system("clear");
 		m.visualizarAgenda();
-		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
-		getline(cin,enter);
+		enter();
 		system("clear");
 		break;
 	case 2:
 		system("clear");
 		m.insertarContacto();
-		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
-		getline(cin,enter);
+		enter();
 		system("clear");
 
 		break;
 	case 3:
 		system("clear");
 		m.buscarContacto();
-		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
-		getline(cin,enter);
+		enter();
 		system("clear");
 		break;
 	case 4:
 		system("clear");
 		m.modificarContacto();
-		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
-		getline(cin,enter);
+		enter();
 		system("clear");
 		break;
 	case 5:
 		system("clear");
 		m.borrarContacto();
-		cout<<"\n\n\t***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
-		getline(cin,enter);
+		enter();
 		system("clear");
 		break;
 	case 6:
@@ -93,4 +89,13 @@ int main() {
 
 	cout << "" << endl; // prints 
 	return 0;
+}
+
+void enter()
+{
+	string enter;
+	std::cout << "\n\n\t\t\t---------------------------------------------------------------------------------\n";
+	cout<<"\t\t\t\t   ***PRESIONA ENTER PARA VOLVER A LAS OPCIONES DE LA AGENDA***";
+	std::cout << "\n\t\t\t---------------------------------------------------------------------------------\n\t\t\t";
+	getline(cin,enter);
 }

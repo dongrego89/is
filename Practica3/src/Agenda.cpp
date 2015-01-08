@@ -80,17 +80,18 @@ bool Agenda::buscarDni(std::string dni){
 
 }
 
-
-
-
-
-
-
-void Agenda::insertar(const Contacto &c) {
+bool Agenda::insertar(const Contacto &c) {
 	std::list<Contacto> auxiliar;
 	auxiliar = GestorDB->cargar();
 	auxiliar.push_back(c);
-	GestorDB->guardar(auxiliar);
+	if(GestorDB->guardar(auxiliar))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 
 
 }
