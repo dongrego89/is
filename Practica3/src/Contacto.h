@@ -39,8 +39,7 @@ namespace agenda{
 		std::string anotaciones_;
 		std::list<Direccion> direcciones_;
 		std::list<RedSocial> redesSociales_;
-		// int frecuencia_;
-
+		int frecuencia_;
 
 	public:
 		Contacto(/*std::list<RedSocial> red, std::list<Direccion> dir,std::string dni="",std::string nom="", std::string ape="",std::string tel="",std::string mov="", std::string ema="", std::string ano=""*/){
@@ -125,6 +124,17 @@ namespace agenda{
 
 	void setRedesSociales(const std::list<RedSocial>& redesSociales) {
 		redesSociales_ = redesSociales;
+	}
+
+	int getFrecuencia() const {
+		return frecuencia_;
+	}
+
+	void setFrecuencia(int frecuencia) {
+		this->frecuencia_ = frecuencia;
+	}
+	void aumentaFrecuencia(){
+		this->frecuencia_=this->frecuencia_+1;
 	}
 };
 

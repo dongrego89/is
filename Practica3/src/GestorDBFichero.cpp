@@ -45,7 +45,8 @@ bool funcion_compara_apellidos(const Contacto &c1, const Contacto &c2) {
 				archivo << c->getTelefono() << ",";
 				archivo << c->getMovil() << ",";
 				archivo << c->getEmail() << ",";
-				archivo << c->getAnotaciones() << "\n";
+				archivo << c->getAnotaciones() << ",";
+				archivo << c->getFrecuencia() << "\n";
 
 
 				std::list<Direccion> dir = (*c).getDirecciones();
@@ -84,7 +85,7 @@ bool funcion_compara_apellidos(const Contacto &c1, const Contacto &c2) {
 	std::list<Contacto> GestorDBFichero::cargar() {
 
 		//Variables auxiliares del getline
-		char dni[9],nombre[30],apellidos[60],telefono[12],movil[12],email[20],anotaciones[300];//D.Personales
+		char dni[9],nombre[30],apellidos[60],telefono[12],movil[12],email[20],frecuencia[50],anotaciones[300];//D.Personales
 		char via[20],calle[60],cp[10],numero[4],portal[2],piso[2],puerta[2];//D.Direccion
 		char red[20],url[40];//D.Red social
 		int i;
@@ -110,7 +111,8 @@ bool funcion_compara_apellidos(const Contacto &c1, const Contacto &c2) {
 					archivo.getline(telefono,200,',');
 					archivo.getline(movil,200,',');
 					archivo.getline(email,200,',');
-					archivo.getline(anotaciones,200,'\n');
+					archivo.getline(anotaciones,200,',');
+					archivo.getline(frecuencia,200,'\n');
 
 					auxContacto.setDni(dni);
 					auxContacto.setNombre(nombre);
@@ -119,6 +121,7 @@ bool funcion_compara_apellidos(const Contacto &c1, const Contacto &c2) {
 					auxContacto.setMovil(movil);
 					auxContacto.setEmail(email);
 					auxContacto.setAnotaciones(anotaciones);
+					auxContacto.setFrecuencia(atoi(frecuencia));
 
 
 					auxDirecciones.clear();//limpiamos lista de direcciones

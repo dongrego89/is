@@ -25,6 +25,8 @@ public:
 
 	void visualizarAgenda();//Visualizar la agenda completa, y llamar a visualizar contacto para imprimirlos uno a uno
 
+	void visualizarFrecuentes();
+
 	void rellenarContacto(Contacto &c);//Rellena un objeto de tipo contacto
 
 	void modificarContacto();//Pide un dni para modificar sus datos, y uno a uno sus datos para rellenar un objeto ficticio

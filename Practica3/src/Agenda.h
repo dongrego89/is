@@ -38,6 +38,9 @@ typedef std::list<Contacto>::iterator Contacto_it;
 		{
 			return GestorDB->cargar();
 		}
+
+		std::list<Contacto> mostrarFrecuentes();
+
 		std::string minuscula(std::string cadena);
 		void imprimirHTML();
 

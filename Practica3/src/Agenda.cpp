@@ -43,6 +43,14 @@ std::list<Contacto> Agenda::buscarApellido(std::string apellido) {
 		if(encontrado!=std::string::npos) //Si hay resultado se añadirá a la lista de retorno
 		{
 			retorno.push_back(*i); //iterator i es un puntero, por tanto para pasar su valor es necesario el operador *
+
+			//Incorporacion
+
+			i->aumentaFrecuencia();
+			this->modificar(i->getDni(),*i);//modificamos el contacto tras incrementar su frecuencia
+
+			//Fin de incorporacion
+
 			// COMENTARIOS: Para añadir funcionalidad de más frecuentes i->incrementarFrecuente();
 		}
 	}
@@ -117,6 +125,24 @@ bool Agenda::eliminar(std::string dni) {
 	else {
 		return false;
 	}
+}
+
+
+
+std::list<Contacto> Agenda::mostrarFrecuentes(){
+	std::list<Contacto> auxiliar;
+	std::list<Contacto> retorno;
+	std::list<Contacto>::iterator i;
+
+	auxiliar=GestorDB->cargar();
+
+	for(i=auxiliar.begin();i!=auxiliar.end();i++){
+		if(i->getFrecuencia() > 10){//Para contabilizar un contacto como frecuente se ha de haber buscado más de 10 veces
+			retorno.push_back(*i);
+		}
+	}
+
+	return retorno;
 }
 
 bool Agenda::modificar(std::string dni, Contacto &c) {

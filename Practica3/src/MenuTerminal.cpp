@@ -86,6 +86,30 @@ void MenuTerminal::visualizarAgenda()
 	}
 }
 
+
+void MenuTerminal::visualizarFrecuentes(){
+	std::list<Contacto>auxiliar;
+	auxiliar=agenda_.mostrarFrecuentes();
+	Contacto_it i;
+	cout << "\t\t\t---------------------------------------------------------------------------------\n";
+		cout <<"\t\t\t"<<"***************************CONTACTOS MAS FRECUENTES************************";
+		cout << "\n\t\t\t---------------------------------------------------------------------------------\n\n";
+		if(!auxiliar.empty())
+		{
+			for(i=auxiliar.begin();i!=auxiliar.end();i++)
+			{
+				this->visualizarContacto(i);//Imprimir contacto a contacto
+			}
+		}
+		else
+		{
+			linea();
+			cout <<"\n\t\t\t\t\t" <<"*Ningún contacto usado con frecuencia.\n";
+			linea();
+		}
+}
+
+
 	void MenuTerminal::rellenarContacto(Contacto &c){
 		int redes, direcciones,i,e;
 
@@ -120,15 +144,17 @@ void MenuTerminal::visualizarAgenda()
 		redes=atoi(red.c_str()); //Si meto una letra atoi() la convierte a 0, por lo tanto si hay equivocacion
 								//metiendo una letra se guardarán 0 redes, ni te las pide que las metas.
 
-		cout<<"\nredes antes:"<<redes;
+		//cout<<"\nredes antes:"<<redes; JOSUE
 		if((redes>3) || (redes<0)) //Si he metido un numero de redes que no se puede meter, redes=0
 		{
-			cout<<"\nredes if:"<<redes;
+		//	cout<<"\nredes if:"<<redes; JOSUE
 			redes=0;
 		}
-		cout<<"\nredes dspues if:"<<redes;
+		//cout<<"\nredes dspues if:"<<redes; JOSUE
 
 		linea();
+
+		c.setFrecuencia(0);//Al modificar o insertar un nuevo contacto, su frecuencia se resetea
 
 		cout <<"\t\t\t"<< "Introduce el dni del contacto: " << endl<<"\t\t\t";
 		getline(cin,dni);
@@ -372,6 +398,8 @@ void MenuTerminal::insertarContacto(){
 	}
 
 }
+
+
 
 void  MenuTerminal::borrarContacto(){
 

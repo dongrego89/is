@@ -39,6 +39,7 @@ int main() {
 	cout<<"\t\t\t\t"<<"Pulsa (4) para modificar un contacto de la agenda."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (5) para borrar un contacto de la agenda."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (6) para mostrar la agenda en firefox."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (7) para visualizar los contactos mas frecuentes."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (0) para salir."<<endl;
 	cout<<"\t\t\t\t"<<"*************************************************************"<<endl<<"\t\t\t\t";
 	cin >>menu;
@@ -78,6 +79,12 @@ int main() {
 		break;
 	case 6:
 		m.imprimeFormato();
+		system("clear");
+		break;
+	case 7:
+		system("clear");
+		m.visualizarFrecuentes();
+		enter();
 		system("clear");
 		break;
 	}
