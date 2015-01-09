@@ -10,12 +10,11 @@
 #include<list>
 #include<fstream>
 #include<cstdlib>
-
 #include <cstring>
-//#include<iostream>//solo por depuracion para cout, quitarlo luego
+
 #include "GestorDBFichero.h"
 
-using namespace std;
+
 
 namespace agenda{
 

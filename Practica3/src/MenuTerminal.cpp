@@ -144,13 +144,13 @@ void MenuTerminal::visualizarFrecuentes(){
 		redes=atoi(red.c_str()); //Si meto una letra atoi() la convierte a 0, por lo tanto si hay equivocacion
 								//metiendo una letra se guardarán 0 redes, ni te las pide que las metas.
 
-		//cout<<"\nredes antes:"<<redes; JOSUE
+
 		if((redes>3) || (redes<0)) //Si he metido un numero de redes que no se puede meter, redes=0
 		{
-		//	cout<<"\nredes if:"<<redes; JOSUE
+		//
 			redes=0;
 		}
-		//cout<<"\nredes dspues if:"<<redes; JOSUE
+
 
 		linea();
 
@@ -399,8 +399,6 @@ void MenuTerminal::insertarContacto(){
 
 }
 
-
-
 void  MenuTerminal::borrarContacto(){
 
 	std::string dni,apellido,coin,opcion;
@@ -505,4 +503,8 @@ void  MenuTerminal::borrarContacto(){
 	}
 }//fin de la funcion borrar
 
+
+
 } /* namespace agenda */
+
+

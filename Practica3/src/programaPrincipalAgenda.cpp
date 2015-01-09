@@ -11,7 +11,7 @@
 #include "MenuTerminal.h"
 #include "GestorDBFichero.h"
 #include <cstdlib>
-#include <string>
+#include <cstring>
 
 using namespace std;
 using namespace agenda;
@@ -19,16 +19,16 @@ using namespace agenda;
 void enter();
 
 int main() {
-	GestorDBFichero *mi_gestor = new GestorDBFichero("fichero.txt");
+	GestorDBFichero *mi_gestor = new GestorDBFichero("agendaContactos.txt");
 
 	Agenda a = Agenda(mi_gestor);
 
 	MenuTerminal m(a);
 
-	;
-
 	int menu;
-
+	string nomFich;
+	char ruta[50]="cp agendaContactos.txt ";
+	string ruta2;
 	system("clear");
 
 	do{
@@ -40,12 +40,14 @@ int main() {
 	cout<<"\t\t\t\t"<<"Pulsa (5) para borrar un contacto de la agenda."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (6) para mostrar la agenda en firefox."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (7) para visualizar los contactos mas frecuentes."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (8) para hacer una copia de seguridad de la agenda."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (0) para salir."<<endl;
 	cout<<"\t\t\t\t"<<"*************************************************************"<<endl<<"\t\t\t\t";
 	cin >>menu;
 	cout<<"\n";
 	cin.ignore(256,'\n');
 	switch(menu){
+
 	case 1:
 		system("clear");
 		m.visualizarAgenda();
@@ -87,6 +89,23 @@ int main() {
 		enter();
 		system("clear");
 		break;
+
+	case 8:
+		system("clear");
+		cout << "\n\t\t\t---------------------------------------------------------------------------------\n";
+		cout <<"\t\t\t"<< "Introduce el nombre de fichero en el que se va a guardar la copia de seguridad:"<<endl<<"\t\t\t";
+		getline(cin,nomFich);
+
+		ruta2=nomFich+".txt";
+
+		strcat(ruta,ruta2.c_str());
+
+		system(ruta);
+
+		enter();
+		system("clear");
+		break;
+
 	}
 
 

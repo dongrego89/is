@@ -54,15 +54,7 @@ std::list<Contacto> Agenda::buscarApellido(std::string apellido) {
 			// COMENTARIOS: Para añadir funcionalidad de más frecuentes i->incrementarFrecuente();
 		}
 	}
-
-	//if (retorno.empty()) //si la lista de retorno está vacía, devolver NULL
-	//{
-		//return NULL;
-	//}
-	//else
-	//{
 		return retorno;
-	//}
 }
 
 bool Agenda::buscarDni(std::string dni){

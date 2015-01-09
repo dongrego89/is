@@ -36,6 +36,8 @@ public:
 
 	void insertarContacto();//Pide un objeto a rellenar campo a campo con los datos del contacto y llama al metodo correspondiente en agenda
 
+	void copiaSeguridad();
+
 	inline void linea(){
 		std::cout << "\n\t\t\t---------------------------------------------------------------------------------\n";
 
