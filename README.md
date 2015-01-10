@@ -1,5 +1,6 @@
 <div align="center">
 <h1>Ingeniería del Software : Práctica Agenda</h1>
+<img src="https://fsfe.org/contribute/advocacy/cwfs/cwfs-1.0.0-black-25-degree-300x201.png">
 <h2>Grupo i22</h2>
 <div align="left">
 <h4>Componentes</h4>
