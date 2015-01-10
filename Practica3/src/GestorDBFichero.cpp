@@ -18,8 +18,18 @@
 
 namespace agenda{
 
+
+std::string minuscula(std::string cadena){
+	std::locale loc;
+	std::string str=cadena;
+	for (std::string::size_type i=0; i<str.length(); ++i)
+	   str[i] = std::tolower(str[i],loc);
+	return str;
+}
+
+
 bool funcion_compara_apellidos(const Contacto &c1, const Contacto &c2) {
-				return c1.getApellidos() < c2.getApellidos();
+				return minuscula(c1.getApellidos()) < minuscula(c2.getApellidos());
 			}
 
 	bool GestorDBFichero::guardar(std::list<Contacto> lista) {

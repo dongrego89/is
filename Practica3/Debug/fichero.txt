@@ -7,7 +7,7 @@ twitter,dongrego89
 ,
 ,
 ,
-30996437G,Rafael,Corpas Prieto,6545454454,654353433,rafacorpas@gmail.com,Esbirro hermanil,11
+30996437G,Rafael,corpas Prieto,6545454454,654353433,rafacorpas@gmail.com,Esbirro hermanil,11
 Calle,Velasco,14505,3,1,1,1
 ,,,,,,
 ,,,,,,
@@ -25,7 +25,7 @@ facebook,Josue Fernandez Lopez
 ,
 ,
 ,
-30242394X,Romualdo,Laredo Pellejero,987373484,622342234,rumalex@wanadoo.es,Nada en particular,0
+30242394X,Romualdo,laredo Pellejero,987373484,622342234,rumalex@wanadoo.es,Nada en particular,0
 Avda,Lanzarote,34234,3,3,3,3
 Avda,Poeta Bizcoche,23423,2,2,2,2
 ,,,,,,
