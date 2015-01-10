@@ -7,6 +7,6 @@
   <li>Jose Antonio López Contreras</li>
 </ul>
 <hr>
-<h3><a href="">Diagrama de clases</a></h3>
+<h3><a href="https://github.com/dongrego89/is/blob/master/documentacion/diagrama%20de%20clases.dia">Diagrama de clases</a></h3>
 <h3>Makes</h3>
 
