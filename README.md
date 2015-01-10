@@ -12,9 +12,9 @@
 </div>
 
 <hr>
-<h3>Diagrama de clases</h3>
+<h5>Diagrama de clases</h5>
 <p>El <a href="https://github.com/dongrego89/is/blob/master/documentacion/diagrama%20de%20clases.dia?raw=true">archivo de diagrama de clases</a> se encuentra en el directorio documentación</p>
-<h3>Compilación del proyecto</h3>
-<p>Para compilar el proyecto bastará con ejecutar el <a href="https://github.com/dongrego89/is/blob/master/Practica3/src/Makefile">archivo Makefile</a> del directorio src</p>
-<h3>Pruebas unitarias</h3>
-<p>Para realizar los test unitarios bastará con ejecutar el archivo Makefile del directorio test</p>
+<h5>Compilación del proyecto</h5>
+<p>Para compilar el proyecto ejecute el <a href="https://github.com/dongrego89/is/blob/master/Practica3/src/Makefile">archivo Makefile</a> del directorio src</p>
+<h5>Pruebas unitarias</h5>
+<p>Para realizar los test unitarios ejecute el archivo Makefile del directorio test</p>
