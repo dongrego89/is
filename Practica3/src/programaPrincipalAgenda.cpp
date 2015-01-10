@@ -27,8 +27,8 @@ int main() {
 
 	int menu;
 	string nomFich;
-	char ruta[50]="cp agendaContactos.txt ";
-	string ruta2;
+	char ruta[50]="cp agendaContactos.txt copiaSeguridad.bk";
+	char ruta2[50]="cp copiaSeguridad.bk agendaContactos.txt";
 	system("clear");
 
 	do{
@@ -41,6 +41,7 @@ int main() {
 	cout<<"\t\t\t\t"<<"Pulsa (6) para mostrar la agenda en firefox."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (7) para visualizar los contactos mas frecuentes."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (8) para hacer una copia de seguridad de la agenda."<<endl;
+	cout<<"\t\t\t\t"<<"Pulsa (9) para cargar la copia de seguridad de la agenda."<<endl;
 	cout<<"\t\t\t\t"<<"Pulsa (0) para salir."<<endl;
 	cout<<"\t\t\t\t"<<"*************************************************************"<<endl<<"\t\t\t\t";
 	cin >>menu;
@@ -93,15 +94,19 @@ int main() {
 	case 8:
 		system("clear");
 		cout << "\n\t\t\t---------------------------------------------------------------------------------\n";
-		cout <<"\t\t\t"<< "Introduce el nombre de fichero en el que se va a guardar la copia de seguridad:"<<endl<<"\t\t\t";
-		getline(cin,nomFich);
-
-		ruta2=nomFich+".txt";
-
-		strcat(ruta,ruta2.c_str());
-
 		system(ruta);
 
+		cout <<"\n\t\t\t\t\t" <<"*Copia de seguridad realizada satisfactoriamente.\n";
+
+		enter();
+		system("clear");
+		break;
+
+	case 9:
+		system("clear");
+		cout << "\n\t\t\t---------------------------------------------------------------------------------\n";
+		system(ruta2);
+		cout <<"\n\t\t\t\t\t" <<"*Copia de seguridad cargada correctamente.\n";
 		enter();
 		system("clear");
 		break;
