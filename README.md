@@ -12,7 +12,8 @@
 </div>
 
 <hr>
-<h3><a href="https://github.com/dongrego89/is/blob/master/documentacion/diagrama%20de%20clases.dia?raw=true">Diagrama de clases</a></h3>
+<h3>Diagrama de clases</h3>
+<p>El <a href="https://github.com/dongrego89/is/blob/master/documentacion/diagrama%20de%20clases.dia?raw=true">archivo de diagrama de clases</a> se encuentra en el directorio documentación</p>
 <h3>Compilación del proyecto</h3>
 <p>Para compilar el proyecto bastará con ejecutar el <a href="https://github.com/dongrego89/is/blob/master/Practica3/src/Makefile">archivo Makefile</a> del directorio src</p>
 
