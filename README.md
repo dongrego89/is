@@ -1,6 +1,8 @@
-is
-==
+<h1>Ingeniería del Software : Práctica Agenda</h1>
+<hr>
+<h2>Grupo i22</h2>
 
-Practicas de Ingeniería del software
-
-dasda
+Componentes:
+Josué Fernández López
+Gregorio Corpas Prieto
+Jose Antonio López Contreras
