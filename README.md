@@ -1,4 +1,5 @@
 <h1>Ingeniería del Software : Práctica Agenda</h1>
+&nbsp;&nbsp;<img src="http://wallpaperest.com/wallpapers/popart-pirate-flag_077998.jpg" width="100">
 <h2>Grupo i22</h2>
 <h3>Componentes</h3>
 <ul>
