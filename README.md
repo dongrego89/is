@@ -1,6 +1,6 @@
 <div align="center">
 <h1>Ingeniería del Software : Práctica Agenda</h1>
-<img src="http://www.i2clipart.com/cliparts/7/6/f/9/12804576f93d134952735172e9299146160454.png" width="100"><h2>Grupo i22</h2>
+<h2>Grupo i22</h2>
 <div align="left">
 <h4>Componentes</h4>
 <ul>
