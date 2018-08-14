@@ -2,14 +2,6 @@
 <h1>Ingeniería del Software : Práctica Agenda</h1>
 <h2>Grupo i22</h2>
 <div align="left">
-<h4>Componentes</h4>
-<ul>
-  <li>Josué Fernández López</li>
-  <li>Gregorio Corpas Prieto</li>
-  <li>Jose Antonio López Contreras</li>
-</ul>
-</div>
-</div>
 
 <hr>
 <h5>Diagrama de clases</h5>
